@@ -67,7 +67,6 @@ class Labirinto
                 pilha_j.Push(j);
                 if (labirinto[i, j-1] == 'Q')
                 {
-                    Console.WriteLine("Parabéns, o queijo foi encontrado");
                     encontrou = true;
                 }
                 j--;
@@ -78,7 +77,6 @@ class Labirinto
                 pilha_j.Push(j);
                 if (labirinto[i+1, j] == 'Q')
                 {
-                    Console.WriteLine("Parabéns, o queijo foi encontrado");
                     encontrou = true;
                 }
                 i++;
@@ -89,7 +87,6 @@ class Labirinto
                 pilha_j.Push(j);
                 if (labirinto[i-1, j] == 'Q')
                 {
-                    Console.WriteLine("Parabéns, o queijo foi encontrado");
                     encontrou = true;
                 }
                 i--;
@@ -103,6 +100,7 @@ class Labirinto
             else
             {
                 Console.WriteLine("Não houve caminho para encontrar o queijo. Game Over");
+                return;
             }
 
             //tentar para baixo = i+1
@@ -116,6 +114,11 @@ class Labirinto
             mostrarLabirinto(labirinto);
 
         }
+        
+        Console.WriteLine("Parabéns, o queijo foi encontrado");
+
+        
+        
 
     }
 
